@@ -1,0 +1,65 @@
+USE [SRF]
+GO
+
+/****** Object:  Table [dbo].[CompanyDetail]    Script Date: 10-12-2025 15:21:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CompanyDetail](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[companyName] [nvarchar](255) NOT NULL,
+	[boardTitle] [nvarchar](255) NOT NULL,
+	[lastReportedAccidentDate] [nvarchar](50) NOT NULL,
+	[reportableAccidentFreeDays] [int] NOT NULL,
+	[safeManHours] [int] NOT NULL,
+	[safetyAwardsName] [nvarchar](100) NOT NULL,
+	[status] [nvarchar](20) NOT NULL,
+	[createdDate] [datetime] NOT NULL,
+	[updatedDate] [datetime] NOT NULL,
+	[companyColor] [varchar](50) NULL,
+	[boardTitleColor] [varchar](50) NULL,
+	[blackBoxBgColor] [varchar](50) NULL,
+	[blackBoxTextColor] [varchar](50) NULL,
+	[blackBoxCenterText] [varchar](50) NULL,
+	[blackBoxFirstText] [varchar](50) NULL,
+	[blackBoxSecondText] [varchar](50) NULL,
+	[blackBoxThirdtext] [varchar](50) NULL,
+	[departmentBoxBgColor] [varchar](50) NULL,
+	[departmentBoxTextColor] [varchar](50) NULL,
+	[table1HeadingBgColor] [varchar](50) NULL,
+	[table1HeadingTextColor] [varchar](50) NULL,
+	[table1HeadingText] [varchar](50) NULL,
+	[table2HeadingBgColor] [varchar](50) NULL,
+	[table2HeadingTextColor] [varchar](50) NULL,
+	[table2HeadingText] [varchar](50) NULL,
+	[awardsSectionBgColor] [varchar](50) NULL,
+	[awardsSectionTextColor] [varchar](50) NULL,
+	[awardsSectionText] [varchar](50) NULL,
+	[SafetyContractorBgColor] [varchar](50) NULL,
+	[SafetyContractorTextColor] [varchar](50) NULL,
+	[SafetyContractorText] [varchar](50) NULL,
+	[SafetyEmployeeBgColor] [varchar](50) NULL,
+	[SafetyEmployeeTextColor] [varchar](50) NULL,
+	[SafetyEmployeeText] [varchar](50) NULL,
+	[SafeObservationBgColor] [varchar](50) NULL,
+	[SafeObservationTextColor] [varchar](50) NULL,
+	[SafeObservationText] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[CompanyDetail] ADD  DEFAULT ('active') FOR [status]
+GO
+
+ALTER TABLE [dbo].[CompanyDetail] ADD  DEFAULT (getdate()) FOR [createdDate]
+GO
+
+ALTER TABLE [dbo].[CompanyDetail] ADD  DEFAULT (getdate()) FOR [updatedDate]
+GO
+

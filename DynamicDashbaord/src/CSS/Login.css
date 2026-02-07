@@ -1,0 +1,68 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  padding-top: 80px;
+
+  width: 100%;
+  /* ⭐ Important Fix */
+  box-sizing: border-box;
+  /* ⭐ Important Fix */
+}
+
+/* Login box */
+.login-box {
+  width: 420px;
+  /* increase or decrease size */
+  padding: 20px 20px;
+  border-radius: 20px;
+  background: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.login-logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  cursor: pointer;
+  font-size: 20px;
+  color: gray;
+}
+
+/* Login options */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+/* Login Button */
+.login-btn {
+  background: linear-gradient(45deg, #4b6cff, #6d28ff) !important;
+  padding: 12px;
+  font-size: 17px !important;
+  border-radius: 10px !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 25px;
+  }
+}

@@ -1,0 +1,35 @@
+USE [SRF]
+GO
+
+/****** Object:  Table [dbo].[Employee]    Script Date: 10-12-2025 15:11:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Employee](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Department] [varchar](255) NOT NULL,
+	[EmpCode] [varchar](100) NOT NULL,
+	[Name] [varchar](255) NOT NULL,
+	[Status] [bit] NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedDate] [datetime] NULL,
+	[Category] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Employee] ADD  DEFAULT ((1)) FOR [Status]
+GO
+
+ALTER TABLE [dbo].[Employee] ADD  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[Employee] ADD  DEFAULT (getdate()) FOR [UpdatedDate]
+GO
+
