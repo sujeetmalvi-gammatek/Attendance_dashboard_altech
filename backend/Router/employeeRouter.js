@@ -8,6 +8,8 @@ employeeRouter.post("/ListDashBoard",employeeListDashBoard)
 
 employeeRouter.get('/DepartmentList', departmentList)
 
+
+// EMPLOYEE LIST, UPDATE,DELETE,DETAIL
 employeeRouter.post("/NewEmployee", newEmployee)
 employeeRouter.post("/Update",updateEmployeeData)
 employeeRouter.post("/Delete",deleteEmployee)
